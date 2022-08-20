@@ -1,0 +1,105 @@
+canvas {
+  width: 500px;
+  height: 650px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.color-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.color-option {
+  transition: transform ease-in-out 0.1s;
+  border: 3px solid white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.color-option:hover {
+  transform: scale(1.2);
+}
+input#color {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.btns {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.btns-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.btns-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.btns button {
+  all: unset;
+  padding: 8px 0;
+  width: 150px;
+  text-align: center;
+  background-color: darkolivegreen;
+  color: white;
+  font-size: 16px;
+  font-weight: 300;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: opacity linear 0.3s;
+}
+.btns button:hover {
+  opacity: 0.85;
+}
+
+.btns input {
+  border: none;
+  border-bottom: 1px solid black;
+  background: none;
+  height: 30px;
+  text-align: center;
+}
+
+.btns input:focus {
+  outline: none;
+}
+.btns input::placeholder {
+  font-size: 18px;
+}
+input#file {
+  display: none;
+}
+
+.btns label {
+  display: flex;
+  justify-content: space-evenly;
+  width: 150px;
+  background-color: darkolivegreen;
+  padding: 8px 0;
+  color: white;
+  font-size: 16px;
+  font-weight: 300;
+  border-radius: 20px;
+  transition: opacity linear 0.3s;
+}
+.btns label:hover {
+  opacity: 0.85;
+}
+
+#line-width {
+  width: 150px;
+  height: 20px;
+}

@@ -10,8 +10,10 @@ function saveTodos() {
 }
 
 function deleteTodo(event) {
-  const li = event.target.parentElement;
+  const li = event.path[2];
+  const i = event.target.parentElement;
   li.remove();
+  i.remove();
   todos = todos.filter((todo) => todo.id !== parseInt(li.id, 10));
   saveTodos();
 }
@@ -19,14 +21,20 @@ function deleteTodo(event) {
 function paintTodo(newTodo) {
   const li = document.createElement("li");
   li.id = newTodo.id;
+  const label = document.createElement("label");
+  const input = document.createElement("input");
   const span = document.createElement("span");
   const button = document.createElement("button");
-  button.innerHTML = `<i class="fa-solid fa-trash-can-xmark"></i>`;
-  button.style = "width:30px; height:30px; padding:3px; font-size:15px";
-  button.classList.add("btn", "btn-outline-dark");
+  label.setAttribute("for", "checkbox");
+  input.type = "checkbox";
+  input.id = "checkBox";
+  button.innerHTML = `<i class="fa-regular fa-trash-can"></i>`;
+  button.classList.add("btn");
   button.addEventListener("click", deleteTodo);
-  li.appendChild(button);
+  li.appendChild(label);
+  li.appendChild(input);
   li.appendChild(span);
+  li.appendChild(button);
   span.innerText = newTodo.text;
   todoList.appendChild(li);
 }

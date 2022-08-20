@@ -1,0 +1,73 @@
+.time {
+  display: flex;
+  width: 100%;
+  height: 35%;
+  justify-content: space-evenly;
+}
+
+#clock {
+  font-size: 42px;
+}
+
+#analog {
+  border: 3px solid black;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  position: relative;
+  background-image: url("https://imvpn22.github.io/analog-clock/clock.png");
+  background-position: center center;
+  background-size: cover;
+}
+
+#analog .hours {
+  border: 4px solid black;
+  border-radius: 4px;
+  position: absolute;
+  height: 35%;
+  left: 96px;
+  top: 24px;
+  animation-duration: 43200s;
+}
+#analog .minutes {
+  border: 2px solid gray;
+  border-radius: 2px;
+  position: absolute;
+  height: 45%;
+  left: 98px;
+  top: 8px;
+  animation-duration: 3600s;
+}
+
+#analog .sec {
+  border: 1px solid tomato;
+  border-radius: 1px;
+  position: absolute;
+  height: 50%;
+  left: 99px;
+  animation-duration: 60s;
+}
+.pin {
+  position: absolute;
+  border: 5px solid black;
+  border-radius: 50%;
+  top: 95px;
+  left: 95px;
+}
+.animate {
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.hand {
+  transform-origin: bottom center;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

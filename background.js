@@ -36,6 +36,4 @@ const body = document.querySelector("body");
 const gradient1 = colors_light[Math.floor(Math.random() * colors_light.length)];
 const gradient2 = colors_dark[Math.floor(Math.random() * colors_dark.length)];
 body.style = `
-background: linear-gradient(0.25turn, ${gradient1} 65%, ${gradient2})`;
-
-export { gradient1, gradient2 };
+background: linear-gradient(0.25turn, ${gradient1} 70%, ${gradient2})`;

@@ -1,31 +1,48 @@
-@import "./reset.css";
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap");
+@import "/src/reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Ubuntu:wght@300;500&display=swap");
+@import "/src/clock.css";
+@import "/src/quotes.css";
+@import "/src/greeting_todo.css";
+@import "/src/painting.css";
+@import "/src/weather.css";
 
 body {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Ubuntu", "Nanum Gothic", sans-serif;
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
   height: 100vh;
-}
-
-#clock {
-  text-align: end;
-  font-size: 50px;
-  color: white;
+  width: 100vw;
+  box-sizing: border-box;
+  gap: 30px;
 }
 
 .hidden {
   display: none;
 }
 
-#login-form {
+::placeholder {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
 }
 
-#greeting {
+section {
+  display: flex;
+  flex-direction: column;
 }
-
-#todo-form {
+#column-one {
+  width: 30%;
+  align-items: center;
+  justify-content: space-between;
 }
-#todo-list {
+#column-two {
+  width: 40%;
 }
-
-#weather {
+#column-three {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  justify-content: space-evenly;
 }

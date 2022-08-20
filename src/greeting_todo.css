@@ -1,0 +1,90 @@
+#header {
+  height: 15%;
+  display: flex;
+  align-items: center;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input {
+  width: 60%;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-right: 20px;
+  text-align: center;
+  font-size: 24px;
+  background: none;
+}
+
+form input:focus {
+  outline: none;
+}
+
+form button {
+  width: 80px;
+  height: 36px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border: none;
+  background-color: white;
+  border-radius: 18px;
+  box-shadow: 0 2px 3px black;
+}
+form button:active {
+  box-shadow: none;
+}
+
+#login-form input {
+  height: 30px;
+  font-size: 26px;
+}
+
+#greeting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+}
+#todo-form {
+  height: 10%;
+  display: flex;
+  align-items: flex-end;
+}
+#todo-list {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  gap: 15px;
+  margin-top: 30px;
+  height: 75%;
+  width: 95%;
+  overflow: auto;
+}
+
+#todo-list > li {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 200;
+  gap: 10px;
+}
+#todo-list > li > button {
+  border: none;
+  background: none;
+  width: 30px;
+  height: 30px;
+}
+#checkBox {
+  display: none;
+}
+#todo-list > li > label {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+}
