@@ -7,15 +7,21 @@ function onGeoOk(position) {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      const weatherBox = document.getElementById("weather");
-      const city = document.querySelectorAll("#weather span")[0];
-      const weather = document.querySelectorAll("#weather span")[1];
-      city.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-      <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-    </svg> ${data.name}`;
-      weather.innerText = `${data.weather[0].main} / ${data.main.temp}℃`;
+      const city = document.querySelector(".weather__column__city");
+      const icon = document.querySelector("#wicon");
+      const weather = document.querySelector(".weather__column__weather");
+      const temp = document.querySelector(".weather__column__temp");
+      const humid = document.querySelector(".weather__column__humid");
+      const wind = document.querySelector(".weather__column__wind");
+      city.innerHTML = `<i class="fa-solid fa-location-dot"></i>${data.name}`;
+      icon.src = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${data.weather[0].icon}.svg`;
+      weather.innerHTML = `${data.weather[0].main}`;
+      temp.innerHTML = `<i class="fa-solid fa-temperature-half"></i> ${data.main.temp}℃`;
+      humid.innerHTML = `<i class="fa-solid fa-droplet"></i> ${data.main.humidity}%`;
+      wind.innerHTML = `<i class="fa-solid fa-wind"></i> ${data.wind.deg} / ${data.wind.speed} m/s`;
     });
 }
+
 function onGeoError() {
   alert("Can't find you. No weather for you...");
 }
