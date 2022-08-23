@@ -51,15 +51,16 @@ input#color {
 .btns button {
   all: unset;
   padding: 8px 0;
-  width: 150px;
+  width: 120px;
   text-align: center;
-  background-color: darkolivegreen;
-  color: white;
+  background-color: white;
+  color: black;
   font-size: 16px;
   font-weight: 300;
   cursor: pointer;
   border-radius: 20px;
   transition: opacity linear 0.3s;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
 }
 .btns button:hover {
   opacity: 0.85;
@@ -71,6 +72,7 @@ input#color {
   background: none;
   height: 30px;
   text-align: center;
+  width: 180px;
 }
 
 .btns input:focus {
@@ -86,20 +88,21 @@ input#file {
 .btns label {
   display: flex;
   justify-content: space-evenly;
-  width: 150px;
-  background-color: darkolivegreen;
+  width: 120px;
+  background-color: white;
   padding: 8px 0;
-  color: white;
+  color: black;
   font-size: 16px;
   font-weight: 300;
   border-radius: 20px;
   transition: opacity linear 0.3s;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
 }
 .btns label:hover {
   opacity: 0.85;
 }
 
 #line-width {
-  width: 150px;
+  width: 180px;
   height: 20px;
 }

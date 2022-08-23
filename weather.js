@@ -18,7 +18,7 @@ function onGeoOk(position) {
       weather.innerHTML = `${data.weather[0].main}`;
       temp.innerHTML = `<i class="fa-solid fa-temperature-half"></i> ${data.main.temp}℃`;
       humid.innerHTML = `<i class="fa-solid fa-droplet"></i> ${data.main.humidity}%`;
-      wind.innerHTML = `<i class="fa-solid fa-wind"></i> ${data.wind.deg} / ${data.wind.speed} m/s`;
+      wind.innerHTML = `<i class="fa-solid fa-wind"></i> ${data.wind.speed} m/s`;
     });
 }
 
