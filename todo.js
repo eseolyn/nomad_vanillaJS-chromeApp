@@ -1,6 +1,7 @@
 const todoForm = document.getElementById("todo-form");
 const todoInput = document.querySelector("#todo-form input");
 const todoList = document.getElementById("todo-list");
+const clearBtn = document.querySelector("#list-btn");
 
 const TODOS_KEY = "todos";
 let todos = [];
@@ -10,7 +11,7 @@ function saveTodos() {
 }
 
 function deleteTodo(event) {
-  const li = event.path[2];
+  const li = event.composedPath()[2];
   const i = event.target.parentElement;
   li.remove();
   i.remove();
@@ -27,7 +28,7 @@ function paintTodo(newTodo) {
   const button = document.createElement("button");
   label.setAttribute("for", "checkbox");
   input.type = "checkbox";
-  input.id = "checkBox";
+  input.classList = "checkbox";
   button.innerHTML = `<i class="fa-regular fa-trash-can"></i>`;
   button.classList.add("btn");
   button.addEventListener("click", deleteTodo);
@@ -59,3 +60,9 @@ if (savedTodos !== null) {
   todos = parsedTodos;
   parsedTodos.forEach(paintTodo);
 }
+
+function clearListBtn(event) {
+  todoList.innerHTML = "";
+  localStorage.clear();
+}
+clearBtn.addEventListener("click", clearListBtn);

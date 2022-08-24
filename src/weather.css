@@ -5,6 +5,7 @@
   justify-content: space-between;
   padding: 15px;
   border-radius: 25px;
+  background-color: var(--box-color);
   box-shadow: var(--left-shadow);
 }
 .weather__column:first-child {

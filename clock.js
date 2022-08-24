@@ -24,7 +24,7 @@ function moveHands() {
   const min = now.getMinutes() * 60;
   const hour = now.getHours() * 3600;
 
-  analog.style.borderColor = gradient1;
+  // analog.style.borderColor = gradient1;
   secHand.style.animationDelay = "-" + sec + "s";
   minHand.style.animationDelay = "-" + min + "s";
   hourHand.style.animationDelay = "-" + hour + "s";

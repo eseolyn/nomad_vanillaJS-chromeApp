@@ -17,6 +17,7 @@ body {
   width: 100vw;
   box-sizing: border-box;
   justify-content: space-between;
+  background-color: var(--back-color);
 }
 
 *,
@@ -55,6 +56,8 @@ section {
   width: 30%;
   justify-content: space-evenly;
   border-radius: 25px;
-  box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.1),
-    inset 3px 4px 10px rgba(255, 255, 255, 0.2);
+  background-color: var(--box-color);
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.2),
+    inset 3px 4px 10px rgba(255, 255, 255, 0.65),
+    inset -3px -3px 8px rgba(0, 0, 0, 0.1);
 }

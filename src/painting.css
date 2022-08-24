@@ -60,7 +60,9 @@ input#color {
   cursor: pointer;
   border-radius: 20px;
   transition: opacity linear 0.3s;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  background-color: var(--point-color);
+  color: white;
+  box-shadow: var(--btn-shadow);
 }
 .btns button:hover {
   opacity: 0.85;
@@ -96,7 +98,9 @@ input#file {
   font-weight: 300;
   border-radius: 20px;
   transition: opacity linear 0.3s;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  background-color: var(--point-color);
+  color: white;
+  box-shadow: var(--btn-shadow);
 }
 .btns label:hover {
   opacity: 0.85;
