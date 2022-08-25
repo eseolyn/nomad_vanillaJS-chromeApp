@@ -60,7 +60,7 @@ function date_clock() {
 
   yearEl.innerHTML = year;
   monthEl.innerHTML = month;
-  weekdayEl.innerHTML = `${date}  ${day}`;
+  weekdayEl.innerHTML = `${day} ${date}`;
 }
 date_clock();
 

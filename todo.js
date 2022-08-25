@@ -5,17 +5,35 @@ const clearBtn = document.querySelector("#list-btn");
 
 const TODOS_KEY = "todos";
 let todos = [];
+let isChecked = false;
 
 function saveTodos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
 }
 
+function checkedBox(event) {
+  const box = event.composedPath()[1].children[2];
+  const checkedLabel = event.composedPath()[1].children[0];
+  if (this.isChecked) {
+    this.isChecked = false;
+    box.classList.remove("checked");
+    checkedLabel.classList.remove("checking");
+  } else {
+    this.isChecked = true;
+    box.classList.add("checked");
+    checkedLabel.classList.add("checking");
+  }
+}
+
 function deleteTodo(event) {
-  const li = event.composedPath()[2];
-  const i = event.target.parentElement;
+  let li = "";
+  if (event.target.tagName == "I") {
+    li = event.composedPath()[2];
+  } else {
+    li = event.composedPath()[1];
+  }
   li.remove();
-  i.remove();
-  todos = todos.filter((todo) => todo.id !== parseInt(li.id, 10));
+  todos = todos.filter((todo) => todo.id !== parseInt(li.id));
   saveTodos();
 }
 
@@ -26,9 +44,10 @@ function paintTodo(newTodo) {
   const input = document.createElement("input");
   const span = document.createElement("span");
   const button = document.createElement("button");
-  label.setAttribute("for", "checkbox");
+  label.setAttribute("for", li.id.slice(8, 13));
   input.type = "checkbox";
-  input.classList = "checkbox";
+  input.id = li.id.slice(8, 13);
+  input.addEventListener("click", checkedBox);
   button.innerHTML = `<i class="fa-regular fa-trash-can"></i>`;
   button.classList.add("btn");
   button.addEventListener("click", deleteTodo);
@@ -61,8 +80,9 @@ if (savedTodos !== null) {
   parsedTodos.forEach(paintTodo);
 }
 
-function clearListBtn(event) {
+function clearListBtn() {
   todoList.innerHTML = "";
-  localStorage.clear();
+  todos = [];
+  saveTodos();
 }
 clearBtn.addEventListener("click", clearListBtn);

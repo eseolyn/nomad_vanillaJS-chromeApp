@@ -51,7 +51,7 @@ input#color {
 .btns button {
   all: unset;
   padding: 8px 0;
-  width: 120px;
+  width: 110px;
   text-align: center;
   background-color: white;
   color: black;
@@ -90,7 +90,7 @@ input#file {
 .btns label {
   display: flex;
   justify-content: space-evenly;
-  width: 120px;
+  width: 110px;
   background-color: white;
   padding: 8px 0;
   color: black;
